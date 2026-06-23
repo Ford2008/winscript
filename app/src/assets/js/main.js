@@ -37,28 +37,10 @@ async function loadConfig() {
 async function loadLocale() {
   let locale = localStorage.getItem("locale");
   if (!locale) return;
+  if (locale === "en") return;
 
   if (!window.location.href.includes(locale)) {
     window.location.href = `/${locale}`;
-  }
-}
-
-// Checks if an update is available and performs it
-async function checkForUpdates() {
-  const update = await check();
-
-  let updateAsk = await ask("An update is available. Do you want to update?", {
-    title: "Update Available",
-    kind: "info",
-    okLabel: "Update",
-    cancelLabel: "Later",
-  });
-
-  if (updateAsk === true) {
-    await update.downloadAndInstall();
-    await relaunch();
-  } else {
-    return;
   }
 }
 
@@ -77,6 +59,30 @@ async function alertForUpdates() {
     await openUrl("https://github.com/flick9000/winscript/releases/latest");
   } else {
     return;
+  }
+}
+
+// Checks if an update is available and performs it
+async function checkForUpdates() {
+  try {
+    const update = await check();
+
+    let updateAsk = await ask("An update is available. Do you want to update?", {
+      title: "Update Available",
+      kind: "info",
+      okLabel: "Update",
+      cancelLabel: "Later",
+    });
+
+    if (updateAsk === true) {
+      await update.downloadAndInstall();
+      await relaunch();
+    } else {
+      return;
+    }
+  } catch (error) {
+    console.error(error);
+    alertForUpdates();
   }
 }
 
@@ -402,9 +408,11 @@ document.querySelectorAll(".checkbox-wrapper").forEach((wrapper) => {
 
   if (checkbox) {
     checkbox.addEventListener("change", () => {
-      indicator.textContent = checkbox.checked
-        ? indicator.getAttribute("data-on") || "On"
-        : indicator.getAttribute("data-off") || "Off";
+      if (indicator) {
+        indicator.textContent = checkbox.checked
+          ? indicator.getAttribute("data-on") || "On"
+          : indicator.getAttribute("data-off") || "Off";
+      }
     });
   }
 
