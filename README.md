@@ -1,6 +1,6 @@
 # WinScript
 
-[![Downloads](https://www.shieldcn.dev/github/downloads/flick9000/winscript.svg?variant=outline&size=sm&color=E0E0E0)](https://github.com/flick9000/winscript/releases)
+[![Downloads]([https://github.com/Ford2008/winscript/blob/feat-autounattend/winscript.png]())]([https://github.com/Ford2008/winscript/releases]
 [![Release](https://www.shieldcn.dev/github/release/flick9000/winscript.svg?variant=outline&size=sm&color=E0E0E0)](https://github.com/flick9000/winscript/releases/latest)
 [![GitHub Sponsors](https://www.shieldcn.dev/badge/Sponsor-GitHub-ea4aaa.svg?logo=githubsponsors&variant=outline&size=sm&color=E0E0E0)](https://github.com/sponsors/flick9000)
 [![Ko-Fi](https://www.shieldcn.dev/badge/Ko--fi-sponsor-FF5E5B.svg?logo=kofi&variant=outline&size=sm&color=E0E0E0)](https://ko-fi.com/flick9000)
@@ -9,6 +9,8 @@
 WinScript is a lightweight and easy to use tool designed to improve and customize your Windows experience. Easily remove bloatware, disable telemetry, improve Windows performance, bulk install your favorite apps, and more.
 <br>
 
+
+WinScript是一个轻量级且易于使用的工具，旨在改善和自定义您的Windows体验。轻松删除臃肿软件、禁用遥测、提高Windows性能、批量安装您喜爱的应用程序等。<br>
 ![App Screenshot](/website/public/winscript.webp)
 
 ## Features
